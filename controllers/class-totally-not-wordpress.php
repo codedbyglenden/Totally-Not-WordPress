@@ -67,33 +67,34 @@ class Totally_Not_WordPress {
 	/**
 	 * Return the entire css path for an asset.
 	 *
-	 * @since 1.0.0
+	 * @param string $filename
 	 *
 	 * @return string
 	 */
-	public function get_asset_path( $filename ) : string {
+	public function get_asset_path( string $filename ) : string {
 		return $this->get_plugin_path() . 'assets/dist/' . $filename;
 	}
 
 	/**
 	 * Return the entire css url for a path
 	 *
-	 * @since 1.0.0
+	 * @param string $filename
 	 *
 	 * @return string
 	 */
-	public function get_asset_url( $filename ) : string {
+	public function get_asset_url( string $filename ) : string {
 		return $this->get_plugin_url() . 'assets/dist/' . $filename;
 	}
 
 	/**
 	 * Require the admin template from given filename.
 	 *
-	 * @since 1.0.0
+	 * @param string $filename
+	 * @param array $args
 	 *
 	 * @return void
 	 */
-	public function get_partial( $filename ) : void {
+	public function get_template_part( string $filename, array $args = array() ) : void {
 		require_once $this->get_plugin_path() . 'templates/admin/partials/' . $filename;
 	}
 
