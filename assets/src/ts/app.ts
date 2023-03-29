@@ -5,11 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Code like commit history doesn't exists...
 	
 	// Ts version of a func.
-	testTsFunc( 'Dave' );
+	sayMyName( 'Heisenberg' );
 });
 
-// TS version of the func.
-const testTsFunc = ( name: string ) : void => {
-	console.log( `Hi ${name}, this is a message!` );
+/**
+ * Console logs the users name.
+ * @param name 
+ */
+const sayMyName = ( name: string ) : void => {
+	console.log( `Your name is ${name}` );
+
+	if ( 'Heisenberg' === name ) {
+		console.log( 'You&apos;re god dam right!' );
+	}
 };
 

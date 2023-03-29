@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name:       Totally Not WordPress
  * Plugin URI:        https://github.com/codedbyglenden/Totally-Not-WordPress
  * Description:       Silence the WordPress haters with this admin interface overhaul.
@@ -12,6 +12,8 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       totally-not-wordpress
  * Domain Path:       /languages
+ *
+ * @package           TNWP
  */
 
 // If this file is called directly, abort.
