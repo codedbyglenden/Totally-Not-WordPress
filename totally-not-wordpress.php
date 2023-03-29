@@ -21,19 +21,25 @@ if ( ! defined( 'WPINC' ) ) {
 	exit();
 }
 
+/**
+ * Define URL & Path Variables.
+ */
 define( 'TOTALLY_NOT_WP_URL', plugin_dir_url( __FILE__ ) );
 define( 'TOTALLY_NOT_WP_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * Require the main helper class.
  */
-require_once TOTALLY_NOT_WP_PATH . 'controllers/class-helpers.php';
+require_once TOTALLY_NOT_WP_PATH . 'controllers/class-totally-not-wordpress.php';
 
 /**
  * Include all subdirs and files in controllers.
  */
 $controllers = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( __DIR__ . '/controllers' ) );
 
+/**
+ * Include all controllers.
+ */
 foreach ( $controllers as $file ) {
 
 	if ( $file->isDir() ) {
@@ -48,7 +54,3 @@ foreach ( $controllers as $file ) {
 
 	require_once $pathname;
 }
-
-
-
-

@@ -18,9 +18,9 @@ if ( class_exists( 'Totally_Not_WordPress' ) ) {
 }
 
 /**
- * Content_Flow base class.
+ * Base class.
  *
- * Contains helper classes used throughout the plugin.
+ * Contains helper methods used throughout the plugin.
  *
  * @since 2.0.0
  */
