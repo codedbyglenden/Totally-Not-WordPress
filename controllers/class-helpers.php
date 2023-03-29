@@ -28,7 +28,7 @@ class Totally_Not_WordPress {
 
 	/**
 	 * The plugin name
-	 * 
+	 *
 	 * @var string $plugin_name - The plugin name
 	 */
 	public $plugin_name = 'Totally Not WordPress';

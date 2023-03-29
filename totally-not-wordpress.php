@@ -34,11 +34,11 @@ $controllers = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( __
 
 foreach ( $controllers as $file ) {
 
-    if ( $file->isDir() ) {
+	if ( $file->isDir() ) {
 		continue;
 	}
 
-    $pathname = $file->getPathname();
+	$pathname = $file->getPathname();
 
 	if ( 'php' !== pathinfo( $pathname, PATHINFO_EXTENSION ) ) {
 		continue;

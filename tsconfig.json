@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "moduleResolution":"node",
+    "allowSyntheticDefaultImports": true,
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+  },
+  "include": [
+    "assets/src/ts/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
