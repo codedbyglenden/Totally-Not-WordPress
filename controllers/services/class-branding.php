@@ -25,6 +25,8 @@ class Branding extends Totally_Not_WordPress {
 
 	/**
 	 * Queue actions for branding.
+	 * 
+	 * @return void
 	 */
 	public function actions() : void {
 		add_action( 'wp_before_admin_bar_render', array( $this, 'remove_admin_bar_logo' ), 10 );
@@ -33,6 +35,8 @@ class Branding extends Totally_Not_WordPress {
 
 	/**
 	 * Queue Filters for branding.
+	 * 
+	 * @return void
 	 */
 	public function filters() : void {
 		add_filter( 'admin_footer_text', array( $this, 'remove_admin_footer_text' ), 600 );

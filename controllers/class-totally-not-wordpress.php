@@ -32,7 +32,7 @@ class Totally_Not_WordPress {
 	 *
 	 * @var array $plugin.
 	 */
-	protected static $plugin = array(
+	private static $plugin = array(
 		'name' => 'Totally Not WordPress',
 		'slug' => 'totally-not-wordpress',
 		'name_space' => 'TNWP',
@@ -52,10 +52,10 @@ class Totally_Not_WordPress {
 	 * 
 	 * @var string $key The array key for the item you wish to return.
 	 * 
-	 * @return many Returns the value of the selected array key, false if it doesn't exist.
+	 * @return many Returns the value of the selected array key, null if it doesn't exist.
 	 */
 	public function get( string $key ) {
-		return isset( self::$plugin[$key] ) ? self::$plugin[$key] : false;
+		return isset( self::$plugin[$key] ) ? self::$plugin[$key] : null;
 	}
 
 	/**
