@@ -22,16 +22,21 @@ if ( class_exists( 'Totally_Not_WordPress' ) ) {
  *
  * Contains helper methods used throughout the plugin.
  *
- * @since 2.0.0
+ * @since 1.0.0
  */
 class Totally_Not_WordPress {
 
 	/**
-	 * The plugin name
+	 * Basic plugin information used throughout the project,
+	 * that can not be overridden.
 	 *
-	 * @var string $plugin_name - The plugin name
+	 * @var array $plugin.
 	 */
-	public $plugin_name = 'Totally Not WordPress';
+	protected static $plugin = array(
+		'name' => 'Totally Not WordPress',
+		'slug' => 'totally-not-wordpress',
+		'name_space' => 'TNWP',
+	);
 
 	/**
 	 * Class setup.
@@ -40,6 +45,17 @@ class Totally_Not_WordPress {
 	 */
 	public function __construct() {
 
+	}
+
+	/**
+	 * Get static class variables.
+	 * 
+	 * @var string $key The array key for the item you wish to return.
+	 * 
+	 * @return many Returns the value of the selected array key, false if it doesn't exist.
+	 */
+	public function get( string $key ) {
+		return isset( self::$plugin[$key] ) ? self::$plugin[$key] : false;
 	}
 
 	/**
@@ -69,6 +85,8 @@ class Totally_Not_WordPress {
 	 *
 	 * @param string $filename
 	 *
+	 * @since 1.0.0
+	 *
 	 * @return string
 	 */
 	public function get_asset_path( string $filename ) : string {
@@ -79,6 +97,8 @@ class Totally_Not_WordPress {
 	 * Return the entire css url for a path
 	 *
 	 * @param string $filename
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return string
 	 */
@@ -91,6 +111,8 @@ class Totally_Not_WordPress {
 	 *
 	 * @param string $filename
 	 * @param array $args
+	 *
+	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
@@ -106,6 +128,6 @@ class Totally_Not_WordPress {
 	 * @return string
 	 */
 	public function get_options_url() : string {
-		return network_admin_url() . 'admin.php?page=happypress-disconnect.php';
+		return network_admin_url() . 'admin.php?page=' . $this->get( 'name' ) . '-options.php';
 	}
 }
