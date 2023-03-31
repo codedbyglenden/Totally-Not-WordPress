@@ -28,8 +28,30 @@ class Settings extends Totally_Not_WordPress {
 	 * @return void
 	 */
 	public function actions() : void {
+        add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_menu', array( $this, 'register_settings_page' ), 10, 1 );
 	}
+
+    /**
+     * Enqueues stylesheets for the settings page.
+     * 
+     * @param string $hook_suffix The current admin page.
+     * 
+     * @return void
+     */
+    public function enqueue_styles( string $hook_suffix ) : void {
+
+        if ( 'settings_page_' . $this->get( 'slug' ) === $hook_suffix ) {
+
+			wp_register_style(
+                $this->get( 'slug' ) . '_settings_css',
+                $this->get_asset_url( 'css/settings.min.css' ),
+                false,
+                $this->get_version()
+            );
+			wp_enqueue_style( $this->get( 'slug' ) . '_settings_css' );
+        }
+    }
 
     /**
      * Register the settings page.
@@ -45,17 +67,17 @@ class Settings extends Totally_Not_WordPress {
             __( $this->get( 'name' ), $this->get( 'namespace' ) ),
             __(  $this->get( 'name' ), $this->get( 'namespace' ) ),
             'manage_options',
-            $this->get( 'slug' ) . '-settings',
+            $this->get( 'slug' ),
             array( $this, 'settings_contents' )
         );
     }
 
     /**
-     * Eduapi Deploy
+     * Requires the settings template.
      *
-     * @since 1.0.0
+     * @return void
      */
-    public function settings_contents() {
+    public function settings_contents() : void {
         $this->get_template_part( 'settings/settings.php' );
     }
 }

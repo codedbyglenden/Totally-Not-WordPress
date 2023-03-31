@@ -59,6 +59,15 @@ class Totally_Not_WordPress {
 	}
 
 	/**
+	 * Returns the plugin version.
+	 * 
+	 * @return string $version Plugin version.
+	 */
+	public function get_version() : string {
+		return get_plugin_data( $this->get_plugin_path() . $this->get( 'slug' ) . '.php' )['Version'];
+	}
+
+	/**
 	 * Returns the path to the plugin.
 	 *
 	 * @since 1.0.0
