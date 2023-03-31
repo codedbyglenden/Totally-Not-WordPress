@@ -49,18 +49,18 @@ class Totally_Not_WordPress {
 
 	/**
 	 * Get static class variables.
-	 * 
+	 *
 	 * @var string $key The array key for the item you wish to return.
-	 * 
+	 *
 	 * @return many Returns the value of the selected array key, null if it doesn't exist.
 	 */
 	public function get( string $key ) {
-		return isset( self::$plugin[$key] ) ? self::$plugin[$key] : null;
+		return isset( self::$plugin[ $key ] ) ? self::$plugin[ $key ] : null;
 	}
 
 	/**
 	 * Returns the plugin version.
-	 * 
+	 *
 	 * @return string $version Plugin version.
 	 */
 	public function get_version() : string {
@@ -92,7 +92,7 @@ class Totally_Not_WordPress {
 	/**
 	 * Return the entire css path for an asset.
 	 *
-	 * @param string $filename
+	 * @param string $filename The name of the file to retrieve.
 	 *
 	 * @since 1.0.0
 	 *
@@ -105,7 +105,7 @@ class Totally_Not_WordPress {
 	/**
 	 * Return the entire css url for a path
 	 *
-	 * @param string $filename
+	 * @param string $filename The name of the file to retrieve.
 	 *
 	 * @since 1.0.0
 	 *
@@ -118,8 +118,8 @@ class Totally_Not_WordPress {
 	/**
 	 * Require the admin template from given filename.
 	 *
-	 * @param string $filename
-	 * @param array $args
+	 * @param string $filename The name of the file to retrieve.
+	 * @param array  $args An array of dynamic values to be used in the retrieved template.
 	 *
 	 * @since 1.0.0
 	 *

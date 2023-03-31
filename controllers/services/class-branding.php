@@ -25,7 +25,7 @@ class Branding extends Totally_Not_WordPress {
 
 	/**
 	 * Queue actions for branding.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function actions() : void {
@@ -35,7 +35,7 @@ class Branding extends Totally_Not_WordPress {
 
 	/**
 	 * Queue Filters for branding.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function filters() : void {
