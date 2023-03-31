@@ -11,7 +11,7 @@ namespace TNWP\Settings;
 use TNWP\Totally_Not_WordPress;
 
 /**
- * Remove WordPress Branding.
+ * Plugin Settings class.
  */
 class Settings extends Totally_Not_WordPress {
 
