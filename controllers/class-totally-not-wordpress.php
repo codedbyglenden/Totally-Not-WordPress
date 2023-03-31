@@ -66,7 +66,7 @@ class Totally_Not_WordPress {
 	 * @return string
 	 */
 	public function get_plugin_path() : string {
-		return HP_DISCONNECT_FLOW_PATH;
+		return TOTALLY_NOT_WP_PATH;
 	}
 
 	/**
@@ -77,7 +77,7 @@ class Totally_Not_WordPress {
 	 * @return string
 	 */
 	public function get_plugin_url() : string {
-		return HP_DISCONNECT_FLOW_URL;
+		return TOTALLY_NOT_WP_URL;
 	}
 
 	/**
@@ -117,7 +117,7 @@ class Totally_Not_WordPress {
 	 * @return void
 	 */
 	public function get_template_part( string $filename, array $args = array() ) : void {
-		require_once $this->get_plugin_path() . 'templates/admin/partials/' . $filename;
+		require_once $this->get_plugin_path() . 'templates/' . $filename;
 	}
 
 	/**
