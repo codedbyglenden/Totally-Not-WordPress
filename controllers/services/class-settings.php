@@ -28,7 +28,7 @@ class Settings extends Totally_Not_WordPress {
 	 * @return void
 	 */
 	public function actions() : void {
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ), 10, 1 );
 		add_action( 'admin_menu', array( $this, 'register_settings_page' ), 10, 1 );
 	}
 
@@ -62,6 +62,7 @@ class Settings extends Totally_Not_WordPress {
 	 */
 	public function register_settings_page( string $context ) : void {
 
+		// Add a sub-menu-item & page under settings.
 		add_submenu_page(
 			'options-general.php',
 			__( $this->get( 'name' ) ),
