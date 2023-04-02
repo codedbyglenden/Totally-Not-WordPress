@@ -74,6 +74,67 @@ class Settings extends Totally_Not_WordPress {
 	}
 
 	/**
+	 * Returns the settings page for a specfic key.
+	 * 
+	 * @param string $key The settings page key.
+	 * 
+	 * @return string Returns the constructed URL.
+	 */
+	private function get_page_slug( string $key ) : string {
+
+		// The settings page link if settings are not moved from default position.
+		$link = apply_filters( 'tnwp_settings_page_link', admin_url( 'options-general.php?page=' . $this->get( 'slug' ) ) );
+
+		if ( isset( $key ) && ! empty( $key ) ) {
+			$link = add_query_arg( 'tab', $key, $link );
+		}
+
+		return esc_url( $link );
+	}
+
+	/**
+	 * Returns a tabbed navigation for a settings menu.
+	 * 
+	 * @param array $menu_items Key value array where the key is the slug & the value is the menu item name.
+	 * 
+	 * @return void Settings navigation is echoed to the DOM.
+	 */
+	public function settings_navigation( array $menu_items ) : void {
+
+		$navigation_items = '';
+
+		if ( $menu_items ) {
+			foreach ( $menu_items as $slug => $name ) {
+
+				if ( ! $name ) {
+					continue;
+				}
+
+				// Get the settings page url.
+				$link = $this->get_page_slug( $slug );
+				
+				// Add the list item.
+				$navigation_items .= sprintf(
+					'<li>
+						<a href="%1$s">%2$s</a>
+					</li>',
+					$link,
+					esc_html( $name )
+				);
+			}
+		}
+
+		printf(
+			'<nav class="settings-nav">
+				<ul>
+					%s
+				</ul>
+			</nav>',
+			$navigation_items
+		);
+	}
+
+	/**
 	 * Requires the settings template.
 	 *
 	 * @return void

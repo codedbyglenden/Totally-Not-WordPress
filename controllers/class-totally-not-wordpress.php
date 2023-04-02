@@ -125,6 +125,10 @@ class Totally_Not_WordPress {
 	 * @return void
 	 */
 	public function get_template_part( string $filename, array $args = array() ) : void {
+
+		// Provides class access within page templates.
+		$plugin = $this;
+
 		require_once $this->get_plugin_path() . 'templates/' . $filename;
 	}
 
