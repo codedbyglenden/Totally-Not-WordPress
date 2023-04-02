@@ -5,5 +5,6 @@ h1{font-size:32px}h1,h2,h3,h4,h5{line-height:1.2}p{line-height:1.2}body{backgrou
 .settings-header p{color:var(--plugin-primary-hover)}.settings-nav ul{list-style:none;display:flex;gap:24px;margin-top:32px;border-bottom:1px solid var(--plugin-primary-hover)}
 .settings-nav li{margin-bottom:16px}.settings-nav a{display:block;padding:8px 24px;border-radius:25px;text-decoration:none;transition:.2s ease-in-out all;outline-offset:2px;border:1px solid rgba(0,0,0,0)}
 .settings-nav a:hover,.settings-nav a:focus-visible{border:1px solid var(--plugin-white)}
+.settings-nav a:focus-visible{background-color:var(--plugin-white);color:var(--plugin-primary)}
 .settings-nav a.is-current{background-color:var(--plugin-white);color:var(--plugin-primary)}
 .settings-nav a.is-current:hover,.settings-nav a.is-current:focus-visible{background-color:var(--plugin-white);color:var(--plugin-primary)}

@@ -49,6 +49,11 @@
                 border: 1px solid var(--plugin-white);
             }
 
+            &:focus-visible {
+                background-color: var(--plugin-white);
+                color: var(--plugin-primary);
+            }
+
             &.is-current {
                 background-color: var(--plugin-white);
                 color: var(--plugin-primary);
