@@ -35,6 +35,7 @@ class Totally_Not_WordPress {
 	private static $plugin = array(
 		'name' => 'Totally Not WordPress',
 		'slug' => 'totally-not-wordpress',
+		'description' => 'Bugs are temporary, WordPress is forever...',
 	);
 
 	/**

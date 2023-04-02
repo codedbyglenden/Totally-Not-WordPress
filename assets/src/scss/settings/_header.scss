@@ -1,17 +1,23 @@
 .settings {
 
     &-header {
-        padding: 80px 40px;
+        padding: 80px 40px 140px;
         background-color: var(--plugin-primary);
         
         h1 {
-            margin: 0;
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 32px;
         }
 
         h1,
         p,
         a {
             color: var(--plugin-white);
+        }
+
+        p {
+            color: var(--plugin-primary-hover);
         }
     }
 
@@ -20,28 +26,38 @@
         ul {
             list-style: none;
             display: flex;
-            gap: 12px;
+            gap: 24px;
             margin-top: 32px;
+            border-bottom: 1px solid var(--plugin-primary-hover);
+        }
+
+        li {
+            margin-bottom: 16px;
         }
 
         a {
             display: block;
             padding: 8px 24px;
-            border: 1px solid var(--plugin-white);
             border-radius: 25px;
             text-decoration: none;
             transition: 0.2s ease-in-out all;
             outline-offset: 2px;
+            border: 1px solid transparent;
+
+            &:hover,
+            &:focus-visible {
+                border: 1px solid var(--plugin-white);
+            }
 
             &.is-current {
                 background-color: var(--plugin-white);
                 color: var(--plugin-primary);
-            }
 
-            &:hover,
-            &:focus-visible {
-                background-color: var(--plugin-white);
-                color: var(--plugin-primary);
+                &:hover,
+                &:focus-visible {
+                    background-color: var(--plugin-white);
+                    color: var(--plugin-primary);
+                }
             }
         }
     }
