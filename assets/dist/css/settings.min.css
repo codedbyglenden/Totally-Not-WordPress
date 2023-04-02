@@ -1,1 +1,6 @@
-.custom-settings{background-color:red}
+:root{--plugin-primary:#01162f;--plugin-primary-hover:#445365;--plugin-text:#1f2124;--plugin-grey:#f2f4f5;--plugin-white:#fff}
+#wpcontent{padding:0 !important}.settings-header{padding:80px 40px;background-color:var(--plugin-primary)}
+.settings-header h1{margin:0}.settings-header h1,.settings-header p,.settings-header a{color:var(--plugin-white)}
+.settings-nav ul{list-style:none;display:flex;gap:12px;margin-top:32px}.settings-nav a{display:block;padding:8px 24px;border:1px solid var(--plugin-white);border-radius:25px;text-decoration:none;transition:.2s ease-in-out all;outline-offset:2px}
+.settings-nav a.is-current{background-color:var(--plugin-white);color:var(--plugin-primary)}
+.settings-nav a:hover,.settings-nav a:focus-visible{background-color:var(--plugin-white);color:var(--plugin-primary)}

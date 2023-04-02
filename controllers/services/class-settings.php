@@ -99,9 +99,10 @@ class Settings extends Totally_Not_WordPress {
 	 * 
 	 * @return void Settings navigation is echoed to the DOM.
 	 */
-	public function settings_navigation( array $menu_items ) : void {
+	protected function settings_navigation( array $menu_items ) : void {
 
 		$navigation_items = '';
+		$current_url      = $this->get_current_url();
 
 		if ( $menu_items ) {
 			foreach ( $menu_items as $slug => $name ) {
@@ -116,10 +117,11 @@ class Settings extends Totally_Not_WordPress {
 				// Add the list item.
 				$navigation_items .= sprintf(
 					'<li>
-						<a href="%1$s">%2$s</a>
+						<a href="%1$s" class="nav-link%3$s">%2$s</a>
 					</li>',
 					$link,
-					esc_html( $name )
+					esc_html( $name ),
+					$current_url === $link ? ' is-current' : ''
 				);
 			}
 		}

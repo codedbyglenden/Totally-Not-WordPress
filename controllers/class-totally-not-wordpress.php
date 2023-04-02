@@ -67,6 +67,23 @@ class Totally_Not_WordPress {
 	}
 
 	/**
+	 * Get the currently active admin url.
+	 * 
+	 * @return string The admin url.
+	 */
+	public function get_current_url(): string {
+		$page_url = 'http://';
+
+		if ( isset( $_SERVER['HTTPS'] ) && 'on' === $_SERVER['HTTPS'] ) {
+			$page_url = 'https://';
+		}
+
+		$page_url .= $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+		
+		return esc_url( $page_url );
+	}
+
+	/**
 	 * Returns the path to the plugin.
 	 *
 	 * @since 1.0.0

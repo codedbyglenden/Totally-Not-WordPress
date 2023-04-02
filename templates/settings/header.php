@@ -7,13 +7,13 @@
 
 ?>
 
-<header>
-    <h1>Settings</h1>
+<header class="settings-header">
+    <h1><?php esc_html_e( $plugin->get( 'name' ) ); ?></h1>
 
     <?php
         $plugin->settings_navigation(
             array(
-                ''      => 'General',
+                ''      => 'Overview',
                 'about' => 'About',
             )
         );

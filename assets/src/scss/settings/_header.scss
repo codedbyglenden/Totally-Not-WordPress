@@ -1,0 +1,48 @@
+.settings {
+
+    &-header {
+        padding: 80px 40px;
+        background-color: var(--plugin-primary);
+        
+        h1 {
+            margin: 0;
+        }
+
+        h1,
+        p,
+        a {
+            color: var(--plugin-white);
+        }
+    }
+
+    &-nav {
+
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        a {
+            display: block;
+            padding: 8px 24px;
+            border: 1px solid var(--plugin-white);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: 0.2s ease-in-out all;
+            outline-offset: 2px;
+
+            &.is-current {
+                background-color: var(--plugin-white);
+                color: var(--plugin-primary);
+            }
+
+            &:hover,
+            &:focus-visible {
+                background-color: var(--plugin-white);
+                color: var(--plugin-primary);
+            }
+        }
+    }
+}
