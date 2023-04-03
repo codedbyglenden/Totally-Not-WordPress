@@ -18,7 +18,7 @@ $plugin->render_settings_page_template();
 /**
  * Require the settings page here.
  */
-$plugin->get_template_part( 'settings/partials/footer.php' );
+// $plugin->get_template_part( 'settings/partials/footer.php' );
 
 // We should probably write a plugin form generator for settings pages.
 

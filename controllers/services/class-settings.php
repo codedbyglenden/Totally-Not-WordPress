@@ -20,6 +20,7 @@ class Settings extends Totally_Not_WordPress {
 	 */
 	public function __construct() {
 		$this->actions();
+		$this->filters();
 	}
 
 	/**
@@ -31,6 +32,33 @@ class Settings extends Totally_Not_WordPress {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ), 10, 1 );
 		add_action( 'admin_menu', array( $this, 'register_settings_page' ), 10, 1 );
 	}
+
+	public function filters() : void {
+        add_filter( 'admin_footer_text', array( $this, 'add_plugin_credit' ), 600 );
+        add_filter( 'update_footer', array( $this, 'remove_admin_footer_text' ), 600 );
+    }
+
+	/**
+     * Removes footer text.
+     * 
+     * @param string $text Text to output, by default: Thank you for creating with WordPress.
+     * 
+     * @param string Return an empty string.
+     */
+	public function add_plugin_credit( string $text ) : string {
+		return 'Crafted with 💛 by <a target="_blank" href="https://github.com/codedbyglenden">codedbyglenden</a>';
+	}
+	
+	/**
+     * Removes footer text.
+     * 
+     * @param string $text Text to output, by default the WordPress version.
+     * 
+     * @param string Return an empty string.
+     */
+    public function remove_admin_footer_text( string $text ) : string {
+        return '';
+    }
 
 	/**
 	 * Enqueues stylesheets for the settings page.
