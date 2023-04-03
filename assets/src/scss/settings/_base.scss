@@ -5,3 +5,11 @@ body {
 #wpcontent {
     padding: 0 !important;
 }
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: -114px;
+    padding-inline: 40px;
+}
