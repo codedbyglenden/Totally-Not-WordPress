@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 
-namespace TNWP\Forms;
+namespace TNWP;
 
 /**
  * Plugin Settings class.

@@ -1,8 +1,17 @@
+<?php
+/**
+ * General settings.
+ * 
+ * @package tnwp
+ */
+
+$form = new TNWP\Forms\General_Settings();
+?>
 <section class="grid">
     <article class="tnwp-metabox is-full">
         <div class="content">
             <h2>Example settings</h2>
-            <?php // $this->form( '' ); ?>
+            <?php $form->render(); ?>
         </div>
     </article>
 

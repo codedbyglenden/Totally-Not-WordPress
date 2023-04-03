@@ -9,7 +9,7 @@ h1{font-size:32px}h1,h2,h3,h4,h5{line-height:1.2}p{line-height:1.2}body{backgrou
 .settings-nav a:focus-visible{background-color:var(--plugin-white);color:var(--plugin-primary)}
 .settings-nav a.is-current{background-color:var(--plugin-white);color:var(--plugin-primary)}
 .settings-nav a.is-current:hover,.settings-nav a.is-current:focus-visible{background-color:var(--plugin-white);color:var(--plugin-primary)}
-.tnwp-metabox{background-color:var(--plugin-white);color:var(--plugin-primary);border-radius:4px;padding:16px;width:100%}
+.tnwp-metabox{box-shadow:0 1px 10px rgba(0,0,0,.1);background-color:var(--plugin-white);color:var(--plugin-primary);border-radius:4px;padding:16px;width:100%}
 .tnwp-metabox .content{max-width:600px}.tnwp-metabox.is-half{width:calc(50% - 40px)}
 .tnwp-metabox.is-third{width:calc(33.333% - 43px)}@media(max-width:850px){.tnwp-metabox{width:100% !important}
 }
