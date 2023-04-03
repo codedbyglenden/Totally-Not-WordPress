@@ -6,14 +6,14 @@
  * @version 1.0.0
  */
 
-namespace TNWP\Save_General_Settings;
+namespace TNWP\Forms\General_Settings;
 
 use TNWP\Forms\Forms;
 
 /**
  * Plugin Settings class.
  */
-class Save_General_Settings extends Forms {
+class General_Settings extends Forms {
 
 	/**
 	 * Initialise class.
@@ -38,6 +38,7 @@ class Save_General_Settings extends Forms {
      * Print form data to the DOM.
      */
     public function render() : void {
-
+        echo 'Form data';
     }
 }
+
