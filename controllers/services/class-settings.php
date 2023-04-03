@@ -136,6 +136,19 @@ class Settings extends Totally_Not_WordPress {
 		);
 	}
 
+	protected function render_settings_page_template() {
+
+		$tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
+
+		$exists = file_exists( $this->get_plugin_path() . 'templates/settings/pages/' . $tab . '.php' );
+
+		if ( $exists ) {
+			$this->get_template_part( 'settings/pages/' . $tab . '.php' );
+		} else {
+			$this->get_template_part( 'settings/pages/general.php' );
+		}
+	}
+
 	/**
 	 * Requires the settings template.
 	 *
