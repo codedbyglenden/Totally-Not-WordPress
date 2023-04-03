@@ -32,8 +32,6 @@ define( 'TOTALLY_NOT_WP_PATH', plugin_dir_path( __FILE__ ) );
  */
 require_once TOTALLY_NOT_WP_PATH . 'controllers/class-totally-not-wordpress.php';
 
-// require_once TOTALLY_NOT_WP_PATH . 'controllers/class-forms.php';
-
 /**
  * Include all subdirs and files in controllers.
  */
