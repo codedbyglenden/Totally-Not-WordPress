@@ -27,6 +27,16 @@ class Forms {
 	}
 
 	/**
+	 * Prints all form warnings, notices & errors.
+	 * 
+	 * @return void All content is echoed.
+	 */
+	public function output_notices() : void {
+
+		echo 'Warnings output here...';
+	}
+
+	/**
 	 * Prints form markup to be output before the form.
 	 *
 	 * @return void

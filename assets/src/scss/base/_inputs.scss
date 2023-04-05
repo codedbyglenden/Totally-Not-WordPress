@@ -1,0 +1,53 @@
+:root {
+	--size-bezel: .5rem;
+	--size-radius: 4px;
+	--color-light: #fff;
+	--color-dark: #212121;
+	--color-signal: #fab700;
+	
+	--color-background: var(--color-light);
+	--color-text: var(--color-dark);
+	--color-accent: var(--color-signal);
+}
+
+.input {
+	position: relative;
+	display: block;
+	margin: 16px 0;
+	
+	&__label {
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5) !important;
+		margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5) !important;
+		white-space: nowrap;
+		transform: translate(0, 0);
+		transform-origin: 0 0;
+		background: var(--color-background);
+		transition: transform 120ms ease-in;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	&__field {
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		border: 3px solid currentcolor;
+		padding: calc(var(--size-bezel) * 1.5) var(--size-bezel) !important;
+		color: currentcolor;
+		background: transparent;
+		border-radius: var(--size-radius);
+		line-height: 1 !important;
+		
+		&:focus,
+		&:not(:placeholder-shown) {
+
+			+ .input__label {
+				transform: translate(.25rem, -65%) scale(.8);
+				color: var(--plugin-primary);
+			}
+		}
+	}
+}

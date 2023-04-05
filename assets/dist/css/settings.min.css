@@ -1,6 +1,11 @@
 :root{--plugin-primary:#01162f;--plugin-primary-hover:#6e8095;--plugin-text:#1f2124;--plugin-grey:#f2f4f5;--plugin-white:#fff}
-h1{font-size:32px}h1,h2,h3,h4,h5{line-height:1.2}p{line-height:1.2}body{background-color:var(--plugin-grey)}
-#wpcontent{padding:0 !important}.grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:-114px;padding-inline:40px}
+h1{font-size:32px}h1,h2,h3,h4,h5{line-height:1.2}p{line-height:1.2}:root{--size-bezel:.5rem;--size-radius:4px;--color-light:#fff;--color-dark:#212121;--color-signal:#fab700;--color-background:var(--color-light);--color-text:var(--color-dark);--color-accent:var(--color-signal)}
+.input{position:relative;display:block;margin:16px 0}.input__label{position:absolute;left:0;top:0;padding:calc(var(--size-bezel)*.75) calc(var(--size-bezel)*.5) !important;margin:calc(var(--size-bezel)*.75 + 3px) calc(var(--size-bezel)*.5) !important;white-space:nowrap;transform:translate(0,0);transform-origin:0 0;background:var(--color-background);transition:transform 120ms ease-in;font-weight:700;line-height:1.2}
+.input__field{box-sizing:border-box;display:block;width:100%;border:3px solid currentcolor;padding:calc(var(--size-bezel)*1.5) var(--size-bezel) !important;color:currentcolor;background:rgba(0,0,0,0);border-radius:var(--size-radius);line-height:1 !important}
+.input__field:not(:-moz-placeholder-shown)+.input__label{transform:translate(0.25rem,-65%) scale(0.8);color:var(--plugin-primary)}
+.input__field:focus+.input__label,.input__field:not(:placeholder-shown)+.input__label{transform:translate(0.25rem,-65%) scale(0.8);color:var(--plugin-primary)}
+body{background-color:var(--plugin-grey)}#wpcontent{padding:0 !important}#wpfooter{position:relative}
+.grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:-114px;padding-inline:40px}
 .settings-header{padding:80px 40px 140px;background-color:var(--plugin-primary)}.settings-header h1{margin-top:0;margin-bottom:8px;font-size:32px}
 .settings-header h1,.settings-header p,.settings-header a{color:var(--plugin-white)}
 .settings-header p{color:var(--plugin-primary-hover)}.settings-nav ul{list-style:none;display:flex;gap:24px;margin-top:32px;border-bottom:1px solid var(--plugin-primary-hover)}

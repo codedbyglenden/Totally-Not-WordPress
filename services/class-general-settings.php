@@ -47,16 +47,35 @@ class General_Settings extends Forms {
 
 		// We need to add these actions on every admin load...
 
+		// do_action( 'tnwp_pre_form_markup' );
+
 		printf(
 			'<form method="post" action="%s">
-                <input type="hidden" name="action" value="save_tnwp_general_settings">
-                <input type="text" name="text" />
+                <input type="hidden" name="action" value="save_tnwp_general_settings" />
+
+				<label class="input">
+					<input class="input__field" type="text" placeholder=" " />
+					<span class="input__label">Some Fancy Label</span>
+				</label>
+
+				<label class="input">
+					<input class="input__field" type="text" placeholder=" " />
+					<span class="input__label">Some Fancy Label</span>
+				</label>
+
+				<label class="input">
+					<input class="input__field" type="text" placeholder=" " />
+					<span class="input__label">Some Fancy Label</span>
+				</label>
+
                 <button type="submit">Save data</button>
             </form>',
 			admin_url( 'admin-post.php' )
 		);
 
-		echo 'Form data outputs here...';
+		// do_action( 'tnwp_post_form_markup' );
+
+		// echo 'Form data outputs here...';
 	}
 }
 
