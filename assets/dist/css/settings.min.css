@@ -8,7 +8,8 @@ h1{font-size:32px}h1,h2,h3,h4,h5{line-height:1.2}p{line-height:1.2}:root{--size-
 .input__button::before{content:"";position:absolute;top:0;left:0;display:block;border-radius:28px;background:rgba(255,171,157,.5);width:56px;height:56px;transition:all .3s ease}
 .input__button span{position:relative;font-size:16px;line-height:18px;font-weight:900;letter-spacing:.25em;text-transform:uppercase;vertical-align:middle}
 .input__button svg{position:relative;top:0;margin-left:10px;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke:#111;stroke-width:2;transform:translateX(-5px);transition:all .3s ease}
-.input__button:hover::before{width:100%;background:#ffab9d}.input__button:hover svg{transform:translateX(0)}
+.input__button:hover::before,.input__button:focus-visible::before{width:100%;background:#ffab9d}
+.input__button:hover svg,.input__button:focus-visible svg{transform:translateX(0)}
 .input__button:active{transform:scale(0.96)}body{background-color:var(--plugin-grey)}
 #wpcontent{padding:0 !important}#wpfooter{position:relative}.grid{display:flex;flex-wrap:wrap;gap:16px;margin-top:-114px;padding-inline:40px}
 .settings-header{padding:80px 40px 140px;background-color:var(--plugin-primary)}.settings-header h1{margin-top:0;margin-bottom:8px;font-size:32px}

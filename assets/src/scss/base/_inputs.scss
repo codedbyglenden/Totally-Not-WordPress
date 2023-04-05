@@ -99,7 +99,8 @@
 			transition: all .3s ease;
 		}
 
-		&:hover {
+		&:hover,
+		&:focus-visible {
 
 			&::before {
 				width: 100%;
