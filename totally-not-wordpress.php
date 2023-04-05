@@ -32,25 +32,35 @@ define( 'TOTALLY_NOT_WP_PATH', plugin_dir_path( __FILE__ ) );
  */
 require_once TOTALLY_NOT_WP_PATH . 'controllers/class-totally-not-wordpress.php';
 
+function autoload( $files ) {
+	/**
+	 * Include all controllers.
+	 */
+	foreach ( $files as $file ) {
+
+		if ( $file->isDir() ) {
+			continue;
+		}
+
+		$pathname = $file->getPathname();
+
+		if ( 'php' !== pathinfo( $pathname, PATHINFO_EXTENSION ) ) {
+			continue;
+		}
+
+		require_once $pathname;
+	}
+}
+
 /**
  * Include all subdirs and files in controllers.
  */
 $controllers = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( __DIR__ . '/controllers' ) );
 
 /**
- * Include all controllers.
+ * Include all subdirs and files in controllers.
  */
-foreach ( $controllers as $file ) {
+$services = new RecursiveIteratorIterator( new RecursiveDirectoryIterator( __DIR__ . '/services' ) );
 
-	if ( $file->isDir() ) {
-		continue;
-	}
-
-	$pathname = $file->getPathname();
-
-	if ( 'php' !== pathinfo( $pathname, PATHINFO_EXTENSION ) ) {
-		continue;
-	}
-
-	require_once $pathname;
-}
+autoload( $controllers );
+autoload( $services );

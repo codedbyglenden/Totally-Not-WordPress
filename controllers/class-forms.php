@@ -20,49 +20,49 @@ class Forms {
 		$this->actions();
 	}
 
-    public function actions() {
-        add_action( 'tnwp_pre_form_markup', array( $this, 'pre_form_markup' ) );
-        add_action( 'tnwp_post_form_markup', array( $this, 'post_form_markup' ) );
-        add_action( 'tnwp_form_notices', array( $this, 'output_notices' ) );
-    }
+	public function actions() {
+		add_action( 'tnwp_pre_form_markup', array( $this, 'pre_form_markup' ) );
+		add_action( 'tnwp_post_form_markup', array( $this, 'post_form_markup' ) );
+		add_action( 'tnwp_form_notices', array( $this, 'output_notices' ) );
+	}
 
-    /**
-     * Prints form markup to be output before the form.
-     * 
-     * @return void
-     */
-    public function pre_form_markup() : void {
+	/**
+	 * Prints form markup to be output before the form.
+	 *
+	 * @return void
+	 */
+	public function pre_form_markup() : void {
 
-        printf(
-            '<section class="form">
+		printf(
+			'<section class="form">
                 <div class="container">
             '
-        );
+		);
 
-        do_action( 'tnwp_form_notices' );
-    }
+		do_action( 'tnwp_form_notices' );
+	}
 
-    /**
-     * Prints form markup to be output after the form.
-     * 
-     * @return void
-     */
-    public function post_form_markup() : void {
+	/**
+	 * Prints form markup to be output after the form.
+	 *
+	 * @return void
+	 */
+	public function post_form_markup() : void {
 
-        printf(
-            '   </div>
+		printf(
+			'   </div>
             </section>'
-        );
-    }
+		);
+	}
 
-    /**
-     * Prints all form errors, warnings & success messages.
-     * 
-     * @return void
-     */
-    public function output_errors() : void {
+	/**
+	 * Prints all form errors, warnings & success messages.
+	 *
+	 * @return void
+	 */
+	public function output_errors() : void {
 
-    }
+	}
 }
 
 new Forms();

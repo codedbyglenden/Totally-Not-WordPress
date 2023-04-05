@@ -6,7 +6,7 @@
  * @version 1.0.0
  */
 
-namespace TNWP\Settings;
+namespace TNWP;
 
 use TNWP\Totally_Not_WordPress;
 
@@ -34,31 +34,31 @@ class Settings extends Totally_Not_WordPress {
 	}
 
 	public function filters() : void {
-        add_filter( 'admin_footer_text', array( $this, 'add_plugin_credit' ), 600 );
-        add_filter( 'update_footer', array( $this, 'remove_admin_footer_text' ), 600 );
-    }
+		add_filter( 'admin_footer_text', array( $this, 'add_plugin_credit' ), 600 );
+		add_filter( 'update_footer', array( $this, 'remove_admin_footer_text' ), 600 );
+	}
 
 	/**
-     * Removes footer text.
-     * 
-     * @param string $text Text to output, by default: Thank you for creating with WordPress.
-     * 
-     * @param string Return an empty string.
-     */
+	 * Removes footer text.
+	 *
+	 * @param string                        $text Text to output, by default: Thank you for creating with WordPress.
+	 *
+	 * @param string Return an empty string.
+	 */
 	public function add_plugin_credit( string $text ) : string {
 		return 'Crafted with 💛 by <a target="_blank" href="https://github.com/codedbyglenden">codedbyglenden</a>';
 	}
-	
+
 	/**
-     * Removes footer text.
-     * 
-     * @param string $text Text to output, by default the WordPress version.
-     * 
-     * @param string Return an empty string.
-     */
-    public function remove_admin_footer_text( string $text ) : string {
-        return '';
-    }
+	 * Removes footer text.
+	 *
+	 * @param string                        $text Text to output, by default the WordPress version.
+	 *
+	 * @param string Return an empty string.
+	 */
+	public function remove_admin_footer_text( string $text ) : string {
+		return '';
+	}
 
 	/**
 	 * Enqueues stylesheets for the settings page.
@@ -103,9 +103,9 @@ class Settings extends Totally_Not_WordPress {
 
 	/**
 	 * Returns the settings page for a specfic key.
-	 * 
+	 *
 	 * @param string $key The settings page key.
-	 * 
+	 *
 	 * @return string Returns the constructed URL.
 	 */
 	private function get_page_slug( string $key ) : string {
@@ -122,9 +122,9 @@ class Settings extends Totally_Not_WordPress {
 
 	/**
 	 * Returns a tabbed navigation for a settings menu.
-	 * 
+	 *
 	 * @param array $menu_items Key value array where the key is the slug & the value is the menu item name.
-	 * 
+	 *
 	 * @return void Settings navigation is echoed to the DOM.
 	 */
 	protected function settings_navigation( array $menu_items ) : void {
@@ -141,7 +141,7 @@ class Settings extends Totally_Not_WordPress {
 
 				// Get the settings page url.
 				$link = $this->get_page_slug( $slug );
-				
+
 				// Add the list item.
 				$navigation_items .= sprintf(
 					'<li>
