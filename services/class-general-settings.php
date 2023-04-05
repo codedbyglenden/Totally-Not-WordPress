@@ -68,7 +68,13 @@ class General_Settings extends Forms {
 					<span class="input__label">Some Fancy Label</span>
 				</label>
 
-                <button type="submit">Save data</button>
+                <button type="submit" class="input__button">
+					<span>Sumit</span>
+					<svg width="13px" height="10px" viewBox="0 0 13 10">
+						<path d="M1,5 L11,5"></path>
+						<polyline points="8 1 12 5 8 9"></polyline>
+					</svg>
+				</button>
             </form>',
 			admin_url( 'admin-post.php' )
 		);
