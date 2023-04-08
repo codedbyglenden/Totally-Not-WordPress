@@ -32,7 +32,14 @@ define( 'TOTALLY_NOT_WP_PATH', plugin_dir_path( __FILE__ ) );
  */
 require_once TOTALLY_NOT_WP_PATH . 'controllers/class-totally-not-wordpress.php';
 
-function autoload( $files ) {
+/**
+ * Load plugin files in for selected directories.
+ *
+ * @param object $files An array of files.
+ *
+ * @return void
+ */
+function autoload( object $files ) : void {
 	/**
 	 * Include all controllers.
 	 */

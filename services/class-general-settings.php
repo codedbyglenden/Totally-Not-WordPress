@@ -22,7 +22,12 @@ class General_Settings extends Forms {
 		$this->actions();
 	}
 
-	public function actions() {
+	/**
+	 * Queue WordPress actions for this class.
+	 *
+	 * @return void
+	 */
+	public function actions() : void {
 		add_action( 'admin_post_save_tnwp_general_settings', array( $this, 'save' ) );
 	}
 

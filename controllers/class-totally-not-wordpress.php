@@ -30,7 +30,7 @@ class Totally_Not_WordPress {
 	 * Basic plugin information used throughout the project,
 	 * that can not be overridden.
 	 *
-	 * @var array $plugin.
+	 * @var array $plugin
 	 */
 	private static $plugin = array(
 		'name'        => 'Totally Not WordPress',
@@ -69,7 +69,7 @@ class Totally_Not_WordPress {
 
 	/**
 	 * Get the currently active admin url.
-	 * 
+	 *
 	 * @return string The admin url.
 	 */
 	public function get_current_url(): string {
@@ -80,7 +80,7 @@ class Totally_Not_WordPress {
 		}
 
 		$page_url .= $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-		
+
 		return esc_url( $page_url );
 	}
 

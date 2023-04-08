@@ -15,7 +15,7 @@ class Forms {
 
 	/**
 	 * Form validation array.
-	 * 
+	 *
 	 * @var array $form_validation An array of success, warnings or errors.
 	 */
 	public array $form_validation = array();
@@ -27,6 +27,11 @@ class Forms {
 		$this->actions();
 	}
 
+	/**
+	 * Queue WordPress actions.
+	 *
+	 * @return void
+	 */
 	public function actions() {
 		add_action( 'tnwp_pre_form_markup', array( $this, 'pre_form_markup' ) );
 		add_action( 'tnwp_post_form_markup', array( $this, 'post_form_markup' ) );
@@ -35,18 +40,18 @@ class Forms {
 
 	/**
 	 * Add items to the validation array.
-	 * 
+	 *
 	 * @param string $text Text to be output on the notice.
-	 * @param int    $level Is it a warning, error, or success message. 
+	 * @param int    $level Is it a warning, error, or success message.
 	 * @param bool   $fatal Will the form finish proccessing after this is set.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function append_to_validation( string $text, int $level = 100, bool $fatal = false ) : void {
 
 		$this->form_validation[] = array(
 			'text'  => $text,
-			'level' => $level
+			'level' => $level,
 		);
 
 		if ( $fatal ) {
@@ -56,10 +61,10 @@ class Forms {
 
 	/**
 	 * Adds error to the validation object.
-	 * 
+	 *
 	 * @param string $text Text to output in error.
-	 * @param bool   $fatal Will this error be the end of output / form processing?
-	 * 
+	 * @param bool   $fatal Will this error be the end of output / form processing.
+	 *
 	 * @return void
 	 */
 	public function error( string $text, bool $fatal = true ) : void {
@@ -68,9 +73,9 @@ class Forms {
 
 	/**
 	 * Add success message.
-	 * 
+	 *
 	 * @param string $text The success message to show.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function success( string $text ) : void {
@@ -79,9 +84,9 @@ class Forms {
 
 	/**
 	 * Add warning to validation object.
-	 * 
+	 *
 	 * @var string $text The warning text to display.
-	 * 
+	 *
 	 * @return void
 	 */
 	public function warning( string $text ) : void {
@@ -90,7 +95,7 @@ class Forms {
 
 	/**
 	 * Prints all form warnings, notices & errors.
-	 * 
+	 *
 	 * @return void All content is echoed.
 	 */
 	public function output_notices() : void {

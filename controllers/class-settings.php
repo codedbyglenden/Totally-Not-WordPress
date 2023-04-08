@@ -24,7 +24,7 @@ class Settings extends Totally_Not_WordPress {
 	}
 
 	/**
-	 * Queue actions for settings.
+	 * Queue WordPress actions for settings.
 	 *
 	 * @return void
 	 */
@@ -33,6 +33,11 @@ class Settings extends Totally_Not_WordPress {
 		add_action( 'admin_menu', array( $this, 'register_settings_page' ), 10, 1 );
 	}
 
+	/**
+	 * Queue WordPress actions for settings.
+	 *
+	 * @return void
+	 */
 	public function filters() : void {
 		add_filter( 'admin_footer_text', array( $this, 'add_plugin_credit' ), 600 );
 		add_filter( 'update_footer', array( $this, 'remove_admin_footer_text' ), 600 );
@@ -41,9 +46,9 @@ class Settings extends Totally_Not_WordPress {
 	/**
 	 * Removes footer text.
 	 *
-	 * @param string                        $text Text to output, by default: Thank you for creating with WordPress.
+	 * @param string $text Text to output, by default: Thank you for creating with WordPress.
 	 *
-	 * @param string Return an empty string.
+	 * @return string Return plugin branding in the footer.
 	 */
 	public function add_plugin_credit( string $text ) : string {
 		return 'Crafted with 💛 by <a target="_blank" href="https://github.com/codedbyglenden">codedbyglenden</a>';
@@ -52,9 +57,9 @@ class Settings extends Totally_Not_WordPress {
 	/**
 	 * Removes footer text.
 	 *
-	 * @param string                        $text Text to output, by default the WordPress version.
+	 * @param string $text Text to output, by default the WordPress version.
 	 *
-	 * @param string Return an empty string.
+	 * @return string
 	 */
 	public function remove_admin_footer_text( string $text ) : string {
 		return '';
@@ -164,7 +169,12 @@ class Settings extends Totally_Not_WordPress {
 		);
 	}
 
-	protected function render_settings_page_template() {
+	/**
+	 * Renders a settings page template, based on the provided tab.
+	 *
+	 * @return void
+	 */
+	protected function render_settings_page_template() : void {
 
 		$tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'general';
 
