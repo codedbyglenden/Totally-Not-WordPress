@@ -116,5 +116,33 @@
 			transform: scale(.96);
 		}
 	}
+
+	&__uploader {
+
+		button {
+			background-color: $primary;
+			color: $color;
+			border: none;
+			padding: 8px 16px;
+		}
+	}
+}
+
+.form-notices {
+
+	li {
+		background-color: var(--plugin-error);
+		color: var(--plugin-primary);
+		padding: 8px;
+		border-radius: 4px;
+
+		&.level-100 {
+			background-color: var(--plugin-warning);
+		}
+	
+		&.level-200 {
+			background-color: var(--plugin-success);
+		}
+	}
 }
 

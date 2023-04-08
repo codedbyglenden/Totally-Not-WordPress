@@ -31,9 +31,14 @@ class General_Settings extends Forms {
 	 */
 	public function save() {
 
-		var_dump( $_POST );
+		$this->warning( 'Empty Last name' );
+		$this->error( 'Empty first name', true );
 
-		die( 'Saved data' );
+		$this->success( 'Form submitted successfully!' );
+
+		// This needs to be an auto redirect.
+		wp_safe_redirect( admin_url() . 'options-general.php?page=totally-not-wordpress' );
+		exit;
 	}
 
 	/**
@@ -41,13 +46,7 @@ class General_Settings extends Forms {
 	 */
 	public function render() : void {
 
-		// Add some form of json reader?
-
-		// The save post action is currently only run when there are forms.
-
-		// We need to add these actions on every admin load...
-
-		// do_action( 'tnwp_pre_form_markup' );
+		do_action( 'tnwp_pre_form_markup' );
 
 		printf(
 			'<form method="post" action="%s">
@@ -55,21 +54,16 @@ class General_Settings extends Forms {
 
 				<label class="input">
 					<input class="input__field" type="text" placeholder=" " />
-					<span class="input__label">Some Fancy Label</span>
+					<span class="input__label">First Name</span>
 				</label>
 
 				<label class="input">
 					<input class="input__field" type="text" placeholder=" " />
-					<span class="input__label">Some Fancy Label</span>
-				</label>
-
-				<label class="input">
-					<input class="input__field" type="text" placeholder=" " />
-					<span class="input__label">Some Fancy Label</span>
+					<span class="input__label">Last Name</span>
 				</label>
 
                 <button type="submit" class="input__button">
-					<span>Sumit</span>
+					<span>Save</span>
 					<svg width="13px" height="10px" viewBox="0 0 13 10">
 						<path d="M1,5 L11,5"></path>
 						<polyline points="8 1 12 5 8 9"></polyline>
@@ -79,9 +73,7 @@ class General_Settings extends Forms {
 			admin_url( 'admin-post.php' )
 		);
 
-		// do_action( 'tnwp_post_form_markup' );
-
-		// echo 'Form data outputs here...';
+		do_action( 'tnwp_post_form_markup' );
 	}
 }
 
