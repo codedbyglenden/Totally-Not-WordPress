@@ -33,7 +33,6 @@ class General_Settings extends Forms {
 
 		$this->warning( 'Empty Last name' );
 		$this->error( 'Empty first name', true );
-
 		$this->success( 'Form submitted successfully!' );
 
 		// This needs to be an auto redirect.

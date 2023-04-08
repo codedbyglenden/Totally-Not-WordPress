@@ -34,7 +34,13 @@ class Forms {
 	}
 
 	/**
-	 *
+	 * Add items to the validation array.
+	 * 
+	 * @param string $text Text to be output on the notice.
+	 * @param int    $level Is it a warning, error, or success message. 
+	 * @param bool   $fatal Will the form finish proccessing after this is set.
+	 * 
+	 * @return void
 	 */
 	public function append_to_validation( string $text, int $level = 100, bool $fatal = false ) : void {
 
