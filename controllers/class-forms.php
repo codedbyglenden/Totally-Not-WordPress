@@ -144,15 +144,6 @@ class Forms {
             </section>'
 		);
 	}
-
-	/**
-	 * Prints all form errors, warnings & success messages.
-	 *
-	 * @return void
-	 */
-	public function output_errors() : void {
-
-	}
 }
 
 new Forms();
